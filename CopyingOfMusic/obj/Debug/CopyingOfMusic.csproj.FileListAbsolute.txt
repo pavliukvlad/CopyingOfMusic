@@ -1,0 +1,10 @@
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\bin\Debug\CopyingOfMusic.exe.config
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\bin\Debug\CopyingOfMusic.exe
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\bin\Debug\CopyingOfMusic.pdb
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.csprojResolveAssemblyReference.cache
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.MainForm.resources
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.Properties.Resources.resources
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.csproj.GenerateResource.cache
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.csproj.CoreCompileInputs.cache
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.exe
+C:\Users\Vlad\Documents\Visual Studio 2017\Projects\CopyingOfMusic\CopyingOfMusic\obj\Debug\CopyingOfMusic.pdb
