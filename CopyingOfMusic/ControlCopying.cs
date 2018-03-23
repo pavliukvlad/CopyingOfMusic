@@ -16,7 +16,6 @@ namespace CopyingOfMusic
 
         public void CopyMusicTo()
         {
-            Console.WriteLine();
             DirectoryInfo di = new DirectoryInfo(pathFrom);
             List<FileInfo> files = di.GetFiles("*.mp3", SearchOption.TopDirectoryOnly).ToList();
 
