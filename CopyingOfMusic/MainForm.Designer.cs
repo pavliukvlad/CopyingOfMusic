@@ -33,6 +33,9 @@
             this.progressCopying = new System.Windows.Forms.ProgressBar();
             this.songName = new System.Windows.Forms.TextBox();
             this.btnCopyMusic = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.extensionsBox = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnChooseDirectoryTo
@@ -75,8 +78,8 @@
             // 
             // btnCopyMusic
             // 
-            this.btnCopyMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnCopyMusic.Location = new System.Drawing.Point(79, 434);
+            this.btnCopyMusic.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCopyMusic.Location = new System.Drawing.Point(16, 453);
             this.btnCopyMusic.Name = "btnCopyMusic";
             this.btnCopyMusic.Size = new System.Drawing.Size(170, 33);
             this.btnCopyMusic.TabIndex = 9;
@@ -84,18 +87,55 @@
             this.btnCopyMusic.UseVisualStyleBackColor = true;
             this.btnCopyMusic.Click += new System.EventHandler(this.btnCopyMusic_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(13, 426);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Choose file extension to copy:";
+            // 
+            // extensionsBox
+            // 
+            this.extensionsBox.FormattingEnabled = true;
+            this.extensionsBox.Items.AddRange(new object[] {
+            "*.mp3",
+            "*.jpeg",
+            "*.jpg",
+            "*.doc"});
+            this.extensionsBox.Location = new System.Drawing.Point(204, 426);
+            this.extensionsBox.Name = "extensionsBox";
+            this.extensionsBox.Size = new System.Drawing.Size(121, 21);
+            this.extensionsBox.TabIndex = 15;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnCancel.Location = new System.Drawing.Point(192, 453);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(133, 33);
+            this.btnCancel.TabIndex = 16;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 475);
+            this.ClientSize = new System.Drawing.Size(334, 498);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.extensionsBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnChooseDirectoryTo);
             this.Controls.Add(this.btnDirectoryFrom);
             this.Controls.Add(this.progressCopying);
             this.Controls.Add(this.songName);
             this.Controls.Add(this.btnCopyMusic);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Copy Music";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +148,9 @@
         private System.Windows.Forms.ProgressBar progressCopying;
         private System.Windows.Forms.TextBox songName;
         private System.Windows.Forms.Button btnCopyMusic;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox extensionsBox;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 

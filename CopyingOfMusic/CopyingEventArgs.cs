@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CopyingOfMusic
 {
-    class CopyingArgs
+    class CopyingEventArgs
     {
         public string Message { get; set; }
         public int Step { get; set; }
-        public CopyingArgs(string message, int step)
+        public CopyingEventArgs(string message, int step)
         {
             Message = message;
             Step = step;

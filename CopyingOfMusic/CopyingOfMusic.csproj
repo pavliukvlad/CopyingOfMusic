@@ -45,8 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlCopying.cs" />
-    <Compile Include="CopyingArgs.cs" />
+    <Compile Include="CopyControl.cs" />
+    <Compile Include="CopyingEventArgs.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

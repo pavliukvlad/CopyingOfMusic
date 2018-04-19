@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,53 +13,42 @@ namespace CopyingOfMusic
 {
     public partial class MainForm : Form
     {
-        ControlCopying copying = new ControlCopying();
-        double step;
-        int count;
+        CopyControl copying = new CopyControl();
+        Helper helper;
 
         public MainForm()
         {
             InitializeComponent();
+            helper = new Helper(progressCopying, songName);
+            copying.HandlerAction += helper.RaiseHandler;
         }
 
         private void btnDirectoryFrom_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            if(folderBrowser.ShowDialog()==DialogResult.OK)
-            {
-                copying.pathFrom = folderBrowser.SelectedPath;
-            }
+            helper.ChooseDirectory(copying, Helper.PathType.PathFrom);
         }
 
         private void btnChooseDirectoryTo_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            if (folderBrowser.ShowDialog() == DialogResult.OK)
-            {
-                copying.newPath = folderBrowser.SelectedPath;
-            }
+            helper.ChooseDirectory(copying, Helper.PathType.NewPath);
         }
 
-        private void btnCopyMusic_Click(object sender, EventArgs e)
+        private async void btnCopyMusic_Click(object sender, EventArgs e)
         {
             try
             {
-                copying.GetKnowStepOfCopying(out step, out count);
-                progressCopying.Maximum = count;
-                progressCopying.Step = (int)step;
-                copying.HandlerAction += Raise_HandlerAction;
-                copying.CopyMusicTo();
+                copying.GetKnowCopyingDetails(progressCopying, extensionsBox);
+                await copying.CopyMusicToAsync();
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Error!");
             }
         }
 
-        private void Raise_HandlerAction(object sender, CopyingArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            songName.Invoke(new Action(() => { songName.AppendText(e.Message); songName.AppendText(Environment.NewLine); }));
-            progressCopying.Invoke(new Action(() => progressCopying.Value += e.Step));
+            copying.CancellationToken.Cancel();
         }
     }
 }
